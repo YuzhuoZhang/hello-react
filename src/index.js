@@ -4,6 +4,7 @@ import './index.css';
 import NameForm from './form';
 import Clock from './clock';
 import LoginControl from './login-control';
+import MyList from './my-list';
 
 
 
@@ -92,6 +93,7 @@ ReactDOM.render(
         <NumberList numbers={numbers} />
         <Blog posts={posts}/>
         <NameForm />
+        <MyList />
     </div>,
     document.getElementById('root')
 );
