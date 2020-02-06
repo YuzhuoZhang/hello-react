@@ -38,7 +38,7 @@ class MyList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            ItemList: Array().fill(null),
+            ItemList: [],
             num:0
         };
         // this.handleClick=this.handleClick.bind(this);
@@ -55,7 +55,7 @@ class MyList extends React.Component {
 
     handleReset() {
         this.setState({
-            ItemList: Array().fill(null),
+            ItemList: [],
             num:0
         });
     }
