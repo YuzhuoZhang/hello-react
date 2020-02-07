@@ -7,12 +7,15 @@ class NameForm extends React.Component{
         this.state={
             value:'',
             textValue:'',
-            selectBoxVar1:'man'
+            selectBoxVar1:'man',
+            isGoing:true,
+            numberOfGuests:2
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleTextChange = this.handleTextChange.bind(this);
         this.handleSelectBoxChange = this.handleSelectBoxChange.bind(this);
+        this.handleInputChange=this.handleInputChange.bind(this);
     }
 
     handleChange(event){
@@ -41,6 +44,16 @@ class NameForm extends React.Component{
         });
     }
 
+    handleInputChange(event){
+        const target = event.target;
+        const value = target.type === 'checkbox'?target.checked : target.value;
+        const name = target.name;
+
+        this.setState({
+            [name]:value
+        });
+    }
+
     render(){
         return (
             <form onSubmit={this.handleSubmit}>
@@ -55,6 +68,22 @@ class NameForm extends React.Component{
                         <option value='man'>男</option>
                         <option value='woman'>女</option>
                     </select>
+                    {/* 文件: */}
+                    {/* <input type='file'/> */}
+                    <br/>
+                    <label>
+                        参与:
+                        <input name="isGoing" type="checkbox" checked={this.state.isGoing} onChange={this.handleInputChange}/>
+                    </label>
+
+                    <label>
+                        来宾人数:
+                        <input name="numberOfGuests" type="number" value={this.state.numberOfGuests} onChange={this.handleInputChange} />
+                    </label>
+                    
+                    {this.state.isGoing.toString()}
+                    {this.state.numberOfGuests}
+                    
                 </label>
                 <input type="submit" value="提交" />
             </form>
