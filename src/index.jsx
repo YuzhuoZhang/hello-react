@@ -5,6 +5,7 @@ import NameForm from './form';
 import Clock from './clock';
 import LoginControl from './login-control';
 import MyList from './my-list';
+import Calculator from './temperature-calculator';
 
 
 
@@ -94,6 +95,7 @@ ReactDOM.render(
         <Blog posts={posts}/>
         <NameForm />
         <MyList />
+        <Calculator />
     </div>,
     document.getElementById('root')
 );
