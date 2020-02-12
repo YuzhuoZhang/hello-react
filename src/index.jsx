@@ -89,12 +89,12 @@ const numbers = [1,2,3];
 ReactDOM.render(
     <div>
         <Clock />
-        <Toggle />
+        {/* <Toggle />
         <LoginControl />
         <NumberList numbers={numbers} />
         <Blog posts={posts}/>
         <NameForm />
-        <MyList />
+        <MyList /> */}
         <Calculator />
     </div>,
     document.getElementById('root')
